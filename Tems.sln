@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemsTransport", "TemsTransport\TemsTransport.csproj", "{60550572-13EC-48F3-B318-A7B998F07F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTemsActivator", "NetTemsActivator\NetTemsActivator.csproj", "{A36C9741-A827-414D-A2C7-521321E1DE47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "samples\Tems\Authentication\Authentication.csproj", "{4C8272BA-8161-4821-8C88-2423597399F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookOrderService", "samples\Tems\BookOrderService\BookOrderService.csproj", "{DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "samples\Tems\Service\Service.csproj", "{234C5089-B267-4910-80A2-13C2690D5F8A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60550572-13EC-48F3-B318-A7B998F07F4D} = {60550572-13EC-48F3-B318-A7B998F07F4D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "samples\Tems\Host\Host.csproj", "{52F81E75-9095-4564-A16C-E90A1388FE5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60550572-13EC-48F3-B318-A7B998F07F4D} = {60550572-13EC-48F3-B318-A7B998F07F4D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMessageProtocol", "samples\Tems\CustomMessageProtocol\CustomMessageProtocol.csproj", "{52F3D5B6-5BC5-458D-A5BB-689EA6CC2D7F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60550572-13EC-48F3-B318-A7B998F07F4D} = {60550572-13EC-48F3-B318-A7B998F07F4D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.MEX", "samples\Tems\Client.MEX\Client.MEX.csproj", "{AA31DCC7-8D43-4158-9236-3200E425463A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60550572-13EC-48F3-B318-A7B998F07F4D} = {60550572-13EC-48F3-B318-A7B998F07F4D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "samples\Tems\Client\Client.csproj", "{370CADD4-72E9-4AC4-8208-14B2D0CEB4D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60550572-13EC-48F3-B318-A7B998F07F4D} = {60550572-13EC-48F3-B318-A7B998F07F4D}
+		{DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E} = {DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60550572-13EC-48F3-B318-A7B998F07F4D}.Debug|x64.ActiveCfg = Debug|x64
+		{60550572-13EC-48F3-B318-A7B998F07F4D}.Debug|x64.Build.0 = Debug|x64
+		{60550572-13EC-48F3-B318-A7B998F07F4D}.Release|x64.ActiveCfg = Release|x64
+		{60550572-13EC-48F3-B318-A7B998F07F4D}.Release|x64.Build.0 = Release|x64
+		{A36C9741-A827-414D-A2C7-521321E1DE47}.Debug|x64.ActiveCfg = Debug|x64
+		{A36C9741-A827-414D-A2C7-521321E1DE47}.Debug|x64.Build.0 = Debug|x64
+		{A36C9741-A827-414D-A2C7-521321E1DE47}.Release|x64.ActiveCfg = Release|x64
+		{A36C9741-A827-414D-A2C7-521321E1DE47}.Release|x64.Build.0 = Release|x64
+		{4C8272BA-8161-4821-8C88-2423597399F6}.Debug|x64.ActiveCfg = Debug|x64
+		{4C8272BA-8161-4821-8C88-2423597399F6}.Debug|x64.Build.0 = Debug|x64
+		{4C8272BA-8161-4821-8C88-2423597399F6}.Release|x64.ActiveCfg = Release|x64
+		{4C8272BA-8161-4821-8C88-2423597399F6}.Release|x64.Build.0 = Release|x64
+		{DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E}.Debug|x64.ActiveCfg = Debug|x64
+		{DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E}.Debug|x64.Build.0 = Debug|x64
+		{DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E}.Release|x64.ActiveCfg = Release|x64
+		{DF20DACA-1F64-4E7A-9967-A00CD8C0DF5E}.Release|x64.Build.0 = Release|x64
+		{234C5089-B267-4910-80A2-13C2690D5F8A}.Debug|x64.ActiveCfg = Debug|x64
+		{234C5089-B267-4910-80A2-13C2690D5F8A}.Debug|x64.Build.0 = Debug|x64
+		{234C5089-B267-4910-80A2-13C2690D5F8A}.Release|x64.ActiveCfg = Release|x64
+		{234C5089-B267-4910-80A2-13C2690D5F8A}.Release|x64.Build.0 = Release|x64
+		{52F81E75-9095-4564-A16C-E90A1388FE5C}.Debug|x64.ActiveCfg = Debug|x64
+		{52F81E75-9095-4564-A16C-E90A1388FE5C}.Debug|x64.Build.0 = Debug|x64
+		{52F81E75-9095-4564-A16C-E90A1388FE5C}.Release|x64.ActiveCfg = Release|x64
+		{52F81E75-9095-4564-A16C-E90A1388FE5C}.Release|x64.Build.0 = Release|x64
+		{52F3D5B6-5BC5-458D-A5BB-689EA6CC2D7F}.Debug|x64.ActiveCfg = Debug|x64
+		{52F3D5B6-5BC5-458D-A5BB-689EA6CC2D7F}.Debug|x64.Build.0 = Debug|x64
+		{52F3D5B6-5BC5-458D-A5BB-689EA6CC2D7F}.Release|x64.ActiveCfg = Release|x64
+		{52F3D5B6-5BC5-458D-A5BB-689EA6CC2D7F}.Release|x64.Build.0 = Release|x64
+		{AA31DCC7-8D43-4158-9236-3200E425463A}.Debug|x64.ActiveCfg = Debug|x64
+		{AA31DCC7-8D43-4158-9236-3200E425463A}.Debug|x64.Build.0 = Debug|x64
+		{AA31DCC7-8D43-4158-9236-3200E425463A}.Release|x64.ActiveCfg = Release|x64
+		{AA31DCC7-8D43-4158-9236-3200E425463A}.Release|x64.Build.0 = Release|x64
+		{370CADD4-72E9-4AC4-8208-14B2D0CEB4D3}.Debug|x64.ActiveCfg = Debug|x64
+		{370CADD4-72E9-4AC4-8208-14B2D0CEB4D3}.Debug|x64.Build.0 = Debug|x64
+		{370CADD4-72E9-4AC4-8208-14B2D0CEB4D3}.Release|x64.ActiveCfg = Release|x64
+		{370CADD4-72E9-4AC4-8208-14B2D0CEB4D3}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60709DA6-6D5E-4A30-AB29-102A5E973CE0}
+	EndGlobalSection
+EndGlobal

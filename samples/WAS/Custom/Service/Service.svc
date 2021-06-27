@@ -1,0 +1,1 @@
+<%@ ServiceHost Service="Tibco.Samples.CalculatorService" Factory="Tibco.Samples.SelfDescribingServiceHostFactory" Debug="true" Language="C#" %>

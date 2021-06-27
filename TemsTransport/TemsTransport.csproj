@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60550572-13EC-48F3-B318-A7B998F07F4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.tibco.wcf.tems</RootNamespace>
+    <AssemblyName>TIBCO.EMS.WCF</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NetTemsActivator\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TIBCO.EMS, Version=1.0.860.4, Culture=neutral, PublicKeyToken=5b83db8ff05c64ba, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_64\TIBCO.EMS\v4.0_1.0.860.4__5b83db8ff05c64ba\TIBCO.EMS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activation\AppManager.cs" />
+    <Compile Include="Activation\TemsListener.cs" />
+    <Compile Include="Activation\TemsListenerAdapter.cs" />
+    <Compile Include="Activation\WasHelper.cs" />
+    <Compile Include="ActivatorService\ITemsBindingExtension.cs" />
+    <Compile Include="ActivatorService\UriLookupTable.cs" />
+    <Compile Include="ITemsPassword.cs" />
+    <Compile Include="TemsMessage.cs" />
+    <Compile Include="TemsWsdlExportExtensionSoapOverJMS.cs" />
+    <Compile Include="TemsTraceSwitch.cs" />
+    <Compile Include="Hosting\HostedTemsTransportConfiguration.cs" />
+    <Compile Include="Hosting\HostedTemsTransportConfigurationImpl.cs" />
+    <Compile Include="Hosting\HostedTemsTransportManager.cs" />
+    <Compile Include="Hosting\TemsAppDomainProtocolHandler.cs" />
+    <Compile Include="Hosting\TemsProcessProtocolHandler.cs" />
+    <Compile Include="TemsWsdlExportExtension.cs" />
+    <Compile Include="TemsWsdlMessageFormatType.cs" />
+    <Compile Include="TemsWsdlJmsBindingExtension.cs" />
+    <Compile Include="TemsWsdlDestinationType.cs" />
+    <Compile Include="TemsWsdlTargetAddressExtension.cs" />
+    <Compile Include="TemsWsdlConnectionFactoryExtension.cs" />
+    <Compile Include="TemsWsdlJndiProperty.cs" />
+    <Compile Include="TemsWsdlJndiContextExtension.cs" />
+    <Compile Include="TemsMessageProtocolType.cs" />
+    <Compile Include="TemsMessageType.cs" />
+    <Compile Include="TemsMessageProtocol.cs" />
+    <Compile Include="ITemsMessageProtocol.cs" />
+    <Compile Include="TemsMessageProtocolSoapOverJMS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsTimeoutTimer.cs" />
+    <Compile Include="TemsDuplexSession.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsDuplexSessionChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsInputSession.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsInputSessionChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsOutputSession.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsOutputSessionChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsReplySessionChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsRequestSessionChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemsTrace.cs" />
+    <Compile Include="TemsDuplexChannel.cs" />
+    <Compile Include="ITemsChannelManager.cs" />
+    <Compile Include="TemsChannelBase.cs" />
+    <Compile Include="TemsChannelConfiguration.cs" />
+    <Compile Include="TemsInputChannel.cs" />
+    <Compile Include="TemsChannelTransport.cs" />
+    <Compile Include="TemsOutputChannel.cs" />
+    <Compile Include="TemsRequestContext.cs" />
+    <Compile Include="TemsAsyncResult.cs" />
+    <Compile Include="TemsReplyChannel.cs" />
+    <Compile Include="TemsChannelListener.cs" />
+    <Compile Include="TemsChannelFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemsRequestChannel.cs" />
+    <Compile Include="TemsTransportBindingElement.cs" />
+    <Compile Include="TemsTransportExtensionElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>if not exist $(SolutionDir)BuildArtifacts mkdir $(SolutionDir)BuildArtifacts</PreBuildEvent>
+    <PostBuildEvent>copy /Y $(TargetPath) $(SolutionDir)BuildArtifacts</PostBuildEvent>
+  </PropertyGroup>
+</Project>

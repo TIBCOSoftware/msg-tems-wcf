@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:tns="http://www.tibco.com/BookOrderService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="BookOrderService" targetNamespace="http://www.tibco.com/BookOrderService">
+    <wsdl:import namespace="http://www.tibco.com/BookOrderService" location="BookOrderService.xsd"/>
+    <wsdl:message name="orderBookRequest">
+        <wsdl:part element="tns:orderBookRequest" name="orderBookRequest">
+		</wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="orderBookResponse">
+        <wsdl:part element="tns:orderBookResponse" name="orderBookResponse">
+		</wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="orderBook_faultMsg">
+        <wsdl:part element="tns:orderBook_fault" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="searchBookRequest">
+        <wsdl:part name="parameters" element="tns:searchBookRequest"/>
+    </wsdl:message>
+    <wsdl:message name="searchBookResponse">
+        <wsdl:part name="parameters" element="tns:searchBookResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="BookOrderPT">
+        <wsdl:operation name="orderBook">
+            <wsdl:input message="tns:orderBookRequest"/>
+            <wsdl:output message="tns:orderBookResponse"/>
+            <wsdl:fault message="tns:orderBook_faultMsg" name="fault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="BookSearchPT">
+        <wsdl:operation name="searchBook">
+            <wsdl:input message="tns:searchBookRequest"/>
+            <wsdl:output message="tns:searchBookResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BookOrderPT_EP" type="tns:BookOrderPT">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="orderBook">
+            <wsdl:documentation/>
+            <soap:operation style="document" soapAction="orderBook"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="orderBookRequest"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="orderBookResponse"/>
+            </wsdl:output>
+            <wsdl:fault name="fault">
+                <soap:fault use="literal" name="fault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="BookSearchPT_EP" type="tns:BookSearchPT">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="searchBook">
+            <wsdl:documentation/>
+            <soap:operation style="document" soapAction="searchBook"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BookOrderService">
+        <wsdl:port name="BookOrderPT_EP" binding="tns:BookOrderPT_EP">
+            <soap:address location="http://localhost:8199/bookorderpt"/>
+        </wsdl:port>
+        <wsdl:port name="BookSearchPT_EP" binding="tns:BookSearchPT_EP">
+            <soap:address location="http://localhost:8199/booksearchpt"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

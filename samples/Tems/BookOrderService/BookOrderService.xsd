@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:tns="http://www.tibco.com/BookOrderService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/BookOrderService"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xsd:element name="orderBookRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="bookName" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="quantity" type="xsd:int" />
+				<xsd:element name="price" type="xsd:double" />
+				<xsd:element name="purchaser" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="creditCardNum" type="xsd:string">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="orderBookResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="orderNumber" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="ShippingDetails" type="tns:ShippingDetails">
+				</xsd:element>
+				<xsd:element name="quantity" type="xsd:int">
+				</xsd:element>
+				<xsd:element name="unitPrice" type="xsd:double">
+				</xsd:element>
+				<xsd:element name="discount" type="xsd:double">
+				</xsd:element>
+				<xsd:element name="orderTotal" type="xsd:double">
+				</xsd:element>
+				<xsd:element name="Book" type="tns:Book">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="orderBook_fault">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="orderBook_fault" type="xsd:string">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="searchBookRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="exactTitle" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="titleSubstring" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="authorSubstring" type="xsd:string">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="searchBookResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:Books" minOccurs="1"
+					maxOccurs="1">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Books">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Book" type="tns:Book"
+					minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="Book">
+			<xsd:sequence>
+				<xsd:element name="title" type="xsd:string"
+					minOccurs="1">
+				</xsd:element>
+                <xsd:element name="isbn" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+                <xsd:element name="price" type="xsd:double"
+					maxOccurs="1" minOccurs="1">
+				</xsd:element>
+				<xsd:element name="authors" maxOccurs="1"
+					minOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="author" type="xsd:string"
+								minOccurs="0" maxOccurs="unbounded">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="publisher" type="xsd:string"
+					maxOccurs="1" minOccurs="1">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	<xsd:complexType name="ShippingDetails">
+			<xsd:sequence>
+				<xsd:element name="shipTo" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="shippingDate" type="xsd:string">
+				</xsd:element>
+				<xsd:element name="shippingAddress" type="xsd:string">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+</xsd:schema>
